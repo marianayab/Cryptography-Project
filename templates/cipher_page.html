@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-3gbn3P7r1VhZV8zOz3CBqjBVc+7X2IKBGS9Zp8q4+9W+KU3U96zrRUnDj88bexfa" crossorigin="anonymous">
+</head>
+<body>
+    <h2>Cipher Page</h2>
+
+    <p>Original Text: {{ original_text }}</p>
+
+    <form method="POST" action="{{ url_for('cipher_page') }}">
+        <input type="hidden" name="original_text" value="{{ original_text }}">
+        <input type="hidden" name="cipher_type" value="{{ cipher_type }}">
+        <label>Do you want to encrypt or decrypt the message?</label>
+        <br>
+        <button type="submit" name="encrypt" value="Encrypt"><i class="fas fa-lock"></i> Encrypt</button>
+        <button type="submit" name="encrypt" value="Decrypt"><i class="fas fa-unlock"></i> Decrypt</button>
+    </form>
+
+    {% if result_text %}
+        <h3>Result:</h3>
+        <p>{{ result_text }}</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}" style="display: block; margin-top: 20px; text-decoration: none;">
+        <i class="fas fa-arrow-left"></i> Back to Cipher Selection
+    </a>
+</body>
+</html>
+
+
+
+
+

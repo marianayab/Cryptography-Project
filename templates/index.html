@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Selection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Cipher Selection</h1>
+
+    <form method="POST" action="{{ url_for('index') }}">
+        <label for="original_text">Enter Text:</label>
+        <input type="text" id="original_text" name="original_text" required>
+
+        <label for="cipher_type">Select Cipher Type:</label>
+        <select id="cipher_type" name="cipher_type">
+            <option value="caesar">Caesar Cipher</option>
+            <option value="polyalphabetic">Polyalphabetic Cipher</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
